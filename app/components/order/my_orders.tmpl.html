@@ -1,0 +1,430 @@
+<header>
+    <div class="header-top">
+  
+      <div class="container">
+  
+        <ul class="header-social-container">
+  
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+  
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+  
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+  
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+  
+        </ul>
+  
+        <div class="header-alert-news">
+          <p>
+            <b>Free Shipping</b>
+            This Week Order Over - &#8377; 4493
+          </p>
+        </div>
+  
+        <div class="header-top-actions">
+  
+          <select name="currency">
+  
+            <option value="usd">USD &dollar;</option>
+            <option value="inr">INR &#8377;</option>
+  
+          </select>
+  
+          <select name="language">
+  
+            <option value="en-US">English</option>
+            <option value="es-ES">Espa&ntilde;ol</option>
+            <option value="fr">Fran&ccedil;ais</option>
+  
+          </select>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+    <div class="header-main">
+  
+      <div class="container">
+  
+        <a href="#" class="header-logo">
+          <img src="./assets/logo/logo.png" alt="Mall's logo" width="230" height="140">
+        </a>
+  
+        <div class="header-user-actions">
+  
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+  
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">3</span>
+          </button>
+  
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">{{$root.cart_count}}</span>
+          </button>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+      
+  
+  </header>
+
+
+  <main>
+    <div class="container-fluid">
+    <div class="product-box">
+        <div class="product-featured">
+            <h2 style="text-align: center;" class="title">Your Order Bag contains({{records.length}}) items</h2>
+
+            <div class="showcase-wrapper has-scrollbar">
+                <div class="showcase-container" ng-repeat="record in records">
+
+                    <div class="showcase">
+                      
+                      <div class="showcase-banner">
+                        <img src="./assets/pair_products/pair_{{$index + 1}}.jpeg" alt={{record.product_id}} class="showcase-img">
+                      </div>
+      
+                      <div class="showcase-content">
+                        
+                        <div class="showcase-rating">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star-outline"></ion-icon>
+                        </div>
+      
+                        <a href="#">
+                          <h3 class="showcase-title">Order ID: {{record.id}}</h3>
+                        </a>
+      
+                        <p class="showcase-desc">
+                            Status: {{record.ordered_status}} &#x1F60A;
+                        </p>
+      
+                        
+                        <button ng-click="" class="add-cart-btn"><ion-icon name="close-circle"></ion-icon> Cancel item</button>
+      
+                        <div class="showcase-status">
+                          <div class="wrapper">
+                            <p>
+                              Preparing your Order <b>20</b>
+                            </p>
+      
+                            <p>
+                              Reach within <b>40</b> this exceeds
+                            </p>
+                          </div>
+      
+                          <div class="showcase-status-bar"></div>
+                        </div>
+      
+                      </div>
+      
+                    </div>
+      
+                  </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+</main>
+
+
+<style>
+    .product-featured { margin-bottom: 30px; }
+
+.product-featured .showcase-wrapper {
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  align-items: center;
+  overflow-y: auto; 
+  overscroll-behavior: contain;
+}
+
+.product-featured .showcase-container {
+  min-width: 100%;
+  padding: 30px;
+  border: 1px solid var(--cultured);
+  -webkit-border-radius: var(--border-radius-md);
+          border-radius: var(--border-radius-md);
+  scroll-snap-align: start;
+}
+
+.product-featured .showcase-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product-featured .showcase-content { margin-top: 30px; }
+
+.product-featured .showcase-rating {
+  color: var(--sandy-brown);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.product-featured .showcase-title {
+  font-size: var(--fs-7);
+  color: var(--eerie-black);
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.product-featured .showcase-desc {
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+  font-weight: var(--weight-300);
+  margin-bottom: 10px;
+}
+
+.product-featured .price-box {
+  font-size: var(--fs-3);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.product-featured .price {
+  color: var(--salmon-pink);
+  font-weight: var(--weight-700);
+}
+
+.product-featured del {
+  color: var(--sonic-silver);
+  font-weight: var(--weight-300);
+}
+
+.product-featured .add-cart-btn {
+  background: var(--salmon-pink);
+  padding: 8px 15px;
+  color: var(--white);
+  font-weight: var(--fs-9);
+  font-weight: var(--weight-700);
+  text-transform: uppercase;
+  -webkit-border-radius: var(--border-radius-md);
+          border-radius: var(--border-radius-md);
+  margin-bottom: 15px;
+  -webkit-transition: var(--transition-timing);
+  -o-transition: var(--transition-timing);
+  transition: var(--transition-timing);
+}
+
+.product-featured .add-cart-btn:hover {
+  background: var(--eerie-black);
+  color: var(--white);
+}
+
+.product-featured .showcase-status { margin-bottom: 15px; }
+
+.product-featured .showcase-status .wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--eerie-black);
+  font-size: var(--fs-9);
+  font-weight: var(--weight-400);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.product-featured .showcase-status-bar {
+  background: var(--cultured);
+  position: relative;
+  height: 10px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.product-featured .showcase-status-bar::before {
+  position: absolute;
+  content: '';
+  top: 3px;
+  left: 3px;
+  height: 4px;
+  width: 40%;
+  background: var(--salmon-pink);
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+}
+
+.product-featured .display-number {
+  color: var(--eerie-black);
+  font-size: var(--fs-5);
+  font-weight: var(--weight-500);
+  min-width: 40px;
+}
+
+.product-featured .display-text {
+  color: var(--davys-gray);
+  font-size: var(--fs-11);
+}
+
+
+
+.product-featured .showcase-container {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 15px; /* Reduce padding */
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  scroll-snap-align: start;
+  max-width: 300px; /* Set maximum width */
+}
+
+.product-featured .showcase-content {
+  text-align: center; /* Center text */
+  margin-top: 15px; /* Reduce top margin */
+}
+
+.product-featured .price-box {
+  text-align: center; /* Center text */
+  margin-bottom: 10px; /* Reduce bottom margin */
+}
+
+.product-featured .add-cart-btn {
+  padding: 6px 12px; /* Reduce padding */
+  font-size: 14px; /* Reduce font size */
+}
+
+
+
+
+
+
+
+.product-featured .showcase-container {
+  padding: 15px; /* Reduce padding */
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  scroll-snap-align: start;
+  max-width: 300px; /* Set maximum width */
+}
+
+.product-featured .showcase-banner img {
+  max-width: 100%; /* Make images responsive */
+  max-height: 150px; /* Limit image height */
+}
+
+.product-featured .showcase-content {
+  margin-top: 15px; /* Reduce top margin */
+}
+
+.product-featured .showcase-rating {
+  font-size: 14px; /* Reduce font size */
+}
+
+.product-featured .showcase-title {
+  font-size: 18px; /* Increase font size */
+}
+
+.product-featured .showcase-desc {
+  font-size: 14px; /* Reduce font size */
+}
+
+.product-featured .price-box {
+  font-size: 16px; /* Reduce font size */
+}
+
+.product-featured .price {
+  font-weight: 700;
+}
+
+.product-featured del {
+  font-weight: 300;
+}
+
+.product-featured .add-cart-btn {
+  padding: 6px 12px; /* Reduce padding */
+  font-size: 14px; /* Reduce font size */
+}
+
+.product-featured .showcase-status-bar {
+  height: 8px; /* Reduce height */
+}
+
+.product-featured .showcase-status-bar::before {
+  height: 4px; /* Reduce height */
+  width: 30%; /* Reduce width */
+}
+
+.product-featured .display-number {
+  font-size: 16px; /* Reduce font size */
+  min-width: auto; /* Remove minimum width */
+}
+
+.product-featured .display-text {
+  font-size: 12px; /* Reduce font size */
+}
+
+
+.product-featured .showcase-wrapper {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically fit two items per row with a minimum width of 300px */
+  gap: 20px; /* Add gap between items */
+  justify-content: center; /* Center items horizontally */
+}
+
+.product-featured .showcase-container {
+  padding: 0; /* Remove padding */
+  border: none; /* Remove border */
+  max-width: none; /* Remove max-width */
+}
+</style>

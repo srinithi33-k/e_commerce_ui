@@ -1,0 +1,114 @@
+body {
+  background-color: rgb(244, 237, 227);
+}
+
+input[required]{
+background-image: radial-gradient(#F00 15%, transparent 16%), radial-gradient(#F00 15%, transparent 16%);
+background-size: 1em 1em;
+background-position: right top;
+background-repeat: no-repeat;
+}
+
+.main-content {
+width: 50%;
+border-radius: 20px;
+box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+margin: 5em auto;
+display: flex;
+}
+.icon-logo {
+  font-size: 20px;
+  color: #123456;
+  background: pink;
+  padding: 12px 15px;
+  border-radius: 50%;
+  font-family: FontAwesome;
+  }
+.company_title {
+  color: #020725;
+}
+/* .company__logo {
+  -o-object-fit: contain;
+  object-fit: contain;
+
+} */
+.company__info {
+/* background-color: #008080; */
+background-color: #c2b1e1;
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+color: rgb(255, 255, 255);
+}
+.fa-android {
+font-size: 3em;
+}
+@media screen and (max-width: 640px) {
+.main-content {
+  width: 90%;
+}
+.company__info {
+  display: none;
+}
+.login_form {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+}
+@media screen and (min-width: 642px) and (max-width: 800px) {
+.main-content {
+  width: 70%;
+}
+}
+.row > h2 {
+/* color: #008080; */
+color: #6f42c1;
+}
+.login_form {
+background-color: rgb(255, 255, 255);
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border-top: 1px solid #ccc;
+border-right: 1px solid #ccc;
+}
+form {
+padding: 0 2em;
+}
+.form__input {
+width: 100%;
+border: 0px solid transparent;
+border-radius: 0;
+border-bottom: 1px solid #aaa;
+padding: 1em 0.5em 0.5em;
+padding-left: 2em;
+outline: none;
+margin: 1.5em auto;
+transition: all 0.5s ease;
+}
+.form__input:focus {
+/* border-bottom-color: #008080; */
+border-bottom-color: #6f42c1;
+box-shadow: 0 0 5px #6f42c1;
+border-radius: 4px;
+}
+.btn {
+transition: all 0.5s ease;
+width: 70%;
+border-radius: 30px;
+/* color: #008080; */
+color: #6f42c1;
+font-weight: 600;
+background-color: #fff;
+/* border: 1px solid #008080; */
+border: 1px solid #6f42c1;
+margin-top: 1.5em;
+margin-bottom: 1em;
+}
+.btn:hover,
+.btn:focus {
+/* background-color: #008080; */
+background-color: #6f42c1;
+color: #fff;
+}

@@ -1,0 +1,242 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <title>Finance App</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/gold_coin.ico?">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./login.css">
+  <script type="text/javascript" src="./protection.js"></script>
+
+  
+  
+</head>
+<body> -->
+  
+<!-- Main Content -->
+<!-- <script type="text/ng-template" id="login.html"> -->
+  
+
+  <!-- rest of template -->
+
+  <div class="container-fluid">
+    <div class="row main-content bg-success text-center">
+      <div class="col-md-4 text-center company__info">
+        <!-- <span class="company__logo">
+          <h2><span class="fa fa-android"></span></h2>
+        </span> -->
+        <h2 class="company_title">Electra Mall!</h2>
+        <span class="company__logo">
+        <h2><img class="img-responsive img-thumbnail" src="./assets/home_page.jpg" alt=""></h2></span>
+      </div>
+      <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+        <div class="container-fluid">
+          <div class="row">
+            <h2>Log In</h2>
+          </div>
+          <div class="row">
+            <form class="form-group" name="loginForm" ng-submit="authLogin()">
+              <div class="row">
+                <div class="form-group has-error has-feedback">
+                <input aria-describedby="error_msg" type="email" name="email" ng-model = "user_request.username" id="email" class="form__input" placeholder="Username" required><br>
+                <span style="margin-top: 0%;" ng-show = "loginForm.email.$error.email" id="error_msg" class="help-block">Not a valid email</span>
+                <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span> -->
+                </div>
+                <!-- <div ng-messages for="loginForm.user_request.username.$error" ng-show="loginForm.lastName.$touched || submitted">
+                  <div ng-message when="pattern">Invalid user email</div>
+                  <div ng-message when="required">username is mandate!</div>
+                </div><span ng-show="loginForm.user_request.username.$error.pattern">The user name is required.</span> -->
+                                <!-- ng-show=
+                "loginForm.user_request.username.$pristine && loginForm.user_request.username.$invalid" -->
+              </div>
+              <div class="row">
+                <!-- <span class="fa fa-lock"></span> -->
+  
+                <input type="password" name="password" ng-model = "user_request.password" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/"  id="password" class="form__input" placeholder="Password" required>
+                <span style="margin-top: 0%; color: red;" ng-show = "loginForm.password.$error.pattern">Not a valid Password</span>
+                <!-- <div ng-messages="loginForm.user_request.password.$error" ng-show="loginForm.lastName.$touched || submitted">
+                  <div ng-message="pattern">Password should be atleast 8 characters long
+                      and should contain one number,one character and one special
+                      character</div> 
+                  <div ng-message="required">Password is mandate!</div>
+                </div> -->
+              </div>
+              <!-- <div class="row">
+                <input type="checkbox" name="remember_me" id="remember_me" class="">
+                <label for="remember_me">Remember Me!</label>
+              </div> -->
+              <div class="row">
+                <input  type="submit" value="Login" class="btn">
+                <!-- ng-disabled="loginForm.$invalid" -->
+              </div>
+            </form>
+          </div>
+          <div class="row">
+            <!-- <p>Already have an account? <button  ng-click = "RegisterUser()">Register Here</button></p> -->
+            <p>Don't have an account? <a href="#" ng-click = "register()" class ="btn">Register Here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="container-fluid text-center footer">
+   <!-- <a href="https://w3schoolweb.com/">W3schoolWeb</a></p> -->
+  </div>
+  
+  
+  
+  <!--   
+  </body>
+  </html> -->
+  
+  
+  <!-- </script> -->
+  
+  
+  <!-- <div class="form-group has-warning">
+    <label class="control-label" for="inputWarning">Input with warning</label>
+    <input type="text" class="form-control" id="inputWarning">
+    <span class="help-block">Something may have gone wrong</span>
+  </div>
+  <div class="form-group has-error">
+    <label class="control-label" for="inputError">Input with error</label>
+    <input type="text" class="form-control" id="inputError">
+    <span class="help-block">Please correct the error</span>
+  </div>
+  <div class="form-group has-info">
+    <label class="control-label" for="inputError">Input with info</label>
+    <input type="text" class="form-control" id="inputError">
+    <span class="help-block">Username is taken</span>
+  </div>
+  <div class="form-group has-success">
+    <label class="control-label" for="inputSuccess">Input with success</label>
+    <input type="text" class="form-control" id="inputSuccess" />
+    <span class="help-block">Woohoo!</span>
+  </div> -->
+
+
+
+
+
+  <style>
+    body {
+    background-color: rgb(244, 237, 227);
+  }
+  body {
+    background-color: rgb(244, 237, 227);
+  }
+  
+  input[required]{
+  background-image: radial-gradient(#F00 15%, transparent 16%), radial-gradient(#F00 15%, transparent 16%);
+  background-size: 1em 1em;
+  background-position: right top;
+  background-repeat: no-repeat;
+  }
+  
+  .main-content {
+  width: 50%;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  margin: 5em auto;
+  display: flex;
+  }
+  .icon-logo {
+    font-size: 20px;
+    color: #123456;
+    background: pink;
+    padding: 12px 15px;
+    border-radius: 50%;
+    font-family: FontAwesome;
+    }
+  .company_title {
+    color: #020725;
+  }
+  /* .company__logo {
+    -o-object-fit: contain;
+    object-fit: contain;
+  
+  } */
+  .company__info {
+  /* background-color: #008080; */
+  background-color: #c2b1e1;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  }
+  .fa-android {
+  font-size: 3em;
+  }
+  @media screen and (max-width: 640px) {
+  .main-content {
+    width: 90%;
+  }
+  .company__info {
+    display: none;
+  }
+  .login_form {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  }
+  @media screen and (min-width: 642px) and (max-width: 800px) {
+  .main-content {
+    width: 70%;
+  }
+  }
+  .row > h2 {
+  /* color: #008080; */
+  color: #6f42c1;
+  }
+  .login_form {
+  background-color: rgb(255, 255, 255);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  }
+  form {
+  padding: 0 2em;
+  }
+  .form__input {
+  width: 100%;
+  border: 0px solid transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #aaa;
+  padding: 1em 0.5em 0.5em;
+  padding-left: 2em;
+  outline: none;
+  margin: 1.5em auto;
+  transition: all 0.5s ease;
+  }
+  .form__input:focus {
+  /* border-bottom-color: #008080; */
+  border-bottom-color: #6f42c1;
+  box-shadow: 0 0 5px #6f42c1;
+  border-radius: 4px;
+  }
+  .btn {
+  transition: all 0.5s ease;
+  width: 70%;
+  border-radius: 30px;
+  /* color: #008080; */
+  color: #6f42c1;
+  font-weight: 600;
+  background-color: #fff;
+  /* border: 1px solid #008080; */
+  border: 1px solid #6f42c1;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  }
+  .btn:hover,
+  .btn:focus {
+  /* background-color: #008080; */
+  background-color: #6f42c1;
+  color: #fff;
+  }
+  </style>

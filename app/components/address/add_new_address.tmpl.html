@@ -1,0 +1,158 @@
+
+<style>
+    /* Style for select option dropdown */
+/* Primary color */
+:root {
+    --primary-color: hsl(351, 43%, 90%); /* Primary color */
+    --primary-hover-color: hsl(353, 87%, 69%); /* Primary color on hover */
+}
+
+/* Style for select option dropdown */
+.form__input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--primary-color);
+    color: #000; /* Change text color as needed */
+    padding: 8px 12px; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    width: 100%; /* Adjust width as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+}
+
+/* Style for select option dropdown arrow */
+.form__input::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust as needed */
+    transform: translateY(-50%);
+    color: #000; /* Change arrow color as needed */
+}
+
+/* Style for select option dropdown hover */
+.form__input:hover {
+    background-color: var(--primary-hover-color); /* Adjust hover color using primary hover color */
+}
+
+/* Style for select option dropdown when focused */
+.form__input:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add box shadow when focused */
+}
+
+/* Style for select option dropdown options */
+.form__input option {
+    background-color: var(--primary-color); /* Adjust option background color using primary color */
+    color: #000; /* Adjust option text color as needed */
+}
+
+/* Style for select option dropdown options on hover */
+.form__input option:hover {
+    background-color: var(--primary-hover-color); /* Adjust hover color using primary hover color */
+}
+
+
+</style>
+
+<div>
+    <div class="notification-toast" success-data-toast ng-if = "toaster" >
+  
+      <button ng-click = "toast_function_off()" class="toast-close-btn" success-data-toast-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+  
+      <div class="toast-banner">
+        <img src="./assets/tick_mark.jpeg" alt="Success Toast" width="80" height="70">
+      </div>
+  
+      <div class="toast-detail">
+  
+        <p class="toast-message">
+          &#x1F604; {{message}} &#x1F389;
+        </p>
+  
+        <p class="toast-title">
+          Success Hurray!
+        </p>
+  
+        <p class="toast-meta">
+          just now
+        </p>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+
+
+
+
+<div class="modal-content custom-modal-content">
+
+    <button ng-click="cancel()" class="modal-close-btn" data-modal-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="newsletter-img">
+        <img class="img-responsive img-thumbnail" src="./assets/address_door.jpeg" alt="" width="285" height="400">
+    </div>
+
+    <div class="newsletter">
+        <form class="form-group" name="addressForm" ng-submit="addAddress()">
+            <div class="row">
+                <div class="form-group has-error has-feedback">
+                    <select aria-describedby="error_msg" name="country" ng-change = "fetchState()" ng-model="country_id" id="country" class="form__input" required>
+                        <option value="" disabled selected>Select Country</option>
+                        <option ng-repeat="country in countries" value="{{country.id}}">{{country.country_name}}</option>
+                    </select>
+                    <br>
+                    <span style="margin-top: 0%;" ng-show="addressForm.country.$error.required" id="error_msg" class="help-block">Please select a country</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group has-error has-feedback">
+                    <select aria-describedby="error_state" ng-change = "fetchArea()" name="state" ng-model="state_id" id="state" class="form__input" required>
+                        <option value="" disabled selected>Select State</option>
+                        <option ng-repeat="state in states" value="{{state.id}}">{{state.state_name}}</option>
+                    </select>
+                    <br>
+                    <span style="margin-top: 0%;" ng-show="addressForm.state.$error.required" id="error_state" class="help-block">Please select a state</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group has-error has-feedback">
+                    <select aria-describedby="error_area" name="area" ng-model="area_id" id="area" class="form__input" required>
+                        <option value="" disabled selected>Select Area</option>
+                        <option ng-repeat="area in areas" value="{{area.id}}">{{area.area_name}}</option>
+                    </select>
+                    <br>
+                    <span style="margin-top: 0%;" ng-show="addressForm.area.$error.required" id="error_area" class="help-block">Please select an area</span>
+                </div>
+            </div>
+            <div class="row">
+                <input  type="submit" value="Add" class="btn-newsletter">
+                <!-- ng-disabled="loginForm.$invalid" -->
+              </div>
+
+        </form>
+
+        <!-- <div class="newsletter-header">
+
+          <h3 class="newsletter-title">{{product.product_name}}</h3>
+
+          <p class="newsletter-desc">
+            {{product.description}}
+          </p>
+
+        </div>
+
+        
+
+        <button ng-click ="AddCartItems(product)" type="submit" class="btn-newsletter">ADD TO CART</button> -->
+        
+
+    </div>
